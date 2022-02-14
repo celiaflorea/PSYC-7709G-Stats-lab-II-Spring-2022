@@ -9,22 +9,34 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+```{r}
+ wide_data <- data.frame(participant = 1:10, 
+                         Morning_A_Noisy = c(61, 100, 70, 100, 93, 70, 85, 51, 70, 50),
+                         Morning_B_Noisy = c(77, 68, 56, 84, 62, 72, 86, 78, 85, 81),
+                         Afternoon_A_Noisy = c(97, 92, 89, 59, 83, 72, 69, 69, 93, 96),
+                         Afternoon_B_Noisy = c(97, 57, 78, 85, 53, 99, 67, 59, 87, 90),
+                         Evening_A_Noisy = c(89, 55, 98, 73, 80, 53, 54, 96, 78, 71), 
+                         Evening_B_Noisy = c(94, 85, 73, 74, 78, 70, 90, 90, 64, 83),
+                         Morning_A_Quiet = c(87, 96, 86, 50, 98, 85, 93, 72, 100, 76),
+                         Morning_B_Quiet = c(87, 88, 86, 62, 69, 60, 53, 61, 98, 64),
+                         Afternoon_A_Quiet = c(65,91,99,89,100,81,63,97,68,50),
+                         Afternoon_B_Quiet = c(53,56,92,61,73,72,61,82,82,75),
+                         Evening_A_Quiet = c(79,90,67,85,69,65,74,57,55,56),
+                         Evening_B_Quiet = c(51,53,96,67,56,60,59,83,58,72))
+                         
+knitr::kable(wide_data)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+#note - changed headers in excel to match time of day & condition
+                        
 ```
 
-## Including Plots
+```{r}
+library(tidyr)
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+pivot_longer(data = wide_data, 
+             cols = !participant,
+             names_to = "time_of_day",
+             values_to = "counts")
+          
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
