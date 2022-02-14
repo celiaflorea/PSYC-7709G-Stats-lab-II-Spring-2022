@@ -1,9 +1,9 @@
 {
     "id": "94D66BCF",
-    "path": "~/Stats class/Stats Lab II Spring 2022/PSYC 7709G Stats lab II Spring 2022/lab1.Rmd",
+    "path": "~/Stats class/PSYC 7709G Stats lab II Spring 2022/lab1.Rmd",
     "project_path": "lab1.Rmd",
     "type": "r_markdown",
-    "hash": "578174806",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1644804073880.0,
@@ -12,14 +12,14 @@
     "properties": {
         "tempName": "Untitled1",
         "cursorPosition": "18,15",
-        "scrollLine": "9"
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1644804099,
+    "lastKnownWriteTime": 1644813026,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1644804099435,
+    "last_content_update": 1644813026,
     "read_only": false,
     "read_only_alternatives": []
 }
